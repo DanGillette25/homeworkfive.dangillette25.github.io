@@ -1,0 +1,33 @@
+
+
+
+.agenda-box {
+    list-style: none;
+    height: 50px;
+    width: 100%;
+    background-color: lightgray;
+    border: 3px solid black;
+}
+
+
+
+li {
+    list-style: none;
+    margin-top: 20px;
+}
+
+
+
+.app-button {
+    float: right;
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+    
+}
+
+.app-button:hover {
+  color: #fff;
+  background-color: #0069d9;
+  border-color: #0062cc;
+}
