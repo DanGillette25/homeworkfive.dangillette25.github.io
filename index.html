@@ -4,30 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Day Planner</title>
+
+    <!--Stylesheet links-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
+    
 </head>
 <body>
-
+<!--Header-->
     <H1>Day Planner</H1>
-
+<!--Date/time display-->
+    <h2 id="currentDate" class="rounded"></h2>
   
 
         <div class="container">
             <div class="row">
-                <div class = "col-sm-10">
-
+                <div class="col-sm-12">
+                
+                    <!--Parent UL for the li elements that will house the time slots-->
                     <ul id="base-ul"></ul>
-
                 </div>
 
             </div>
         </div>
 
-    
+<!---Javascript doc links.  For moment.js, I was getting error messages from using the CDN, so I copied and pasted the code and-->
+<!--generated an in-house script-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src = "./hours.js"></script>
     <script src = "./script.js"></script>
+    <script src="./moment.js"></script>
     
 </body>
 </html>

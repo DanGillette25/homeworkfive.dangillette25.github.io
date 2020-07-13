@@ -1,22 +1,31 @@
+/* Styling for header elements */
+h1 {
+    text-align: center;
+    background-color: #007bff;
+    color: white;
+    font-family: 'Do Hyeon', sans-serif;
+}
 
-
-
-.agenda-box {
-    list-style: none;
-    height: 50px;
-    width: 100%;
-    background-color: lightgray;
-    border: 3px solid black;
+h2 {
+    text-align: center;
+    background-color: #007bff;
+    color: white;
+    width: 80%;
+    margin-top: 20px;
+    margin-right: auto;
+    margin-left: auto;
+    font-family: 'Do Hyeon', sans-serif;
 }
 
 
 
+/* Styling for li elements that contain the input fields and save buttons */
 li {
     list-style: none;
     margin-top: 20px;
 }
 
-
+/* styling for the buttons */
 
 .app-button {
     float: right;
@@ -31,3 +40,29 @@ li {
   background-color: #0069d9;
   border-color: #0062cc;
 }
+
+/* styling for the input fields */
+.past {
+    list-style: none;
+    height: 50px;
+    background-color: lightcoral;
+    border: 3px solid black;
+    width: 100%;
+}
+
+.present {
+    list-style: none;
+    height: 50px;
+    background-color: white;
+    border: 3px solid black;
+    width: 100%;
+}
+
+.future {
+    list-style: none;
+    height: 50px;
+    background-color: lightgray;
+    border: 3px solid black;
+    width: 100%;
+}
+
