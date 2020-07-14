@@ -1,11 +1,9 @@
 $(document).ready(function(){
 
     // Get the current Date/time and put them in the header
-    var currentDate = moment().format('MM-DD-YYYY');
-    var currentHour = moment().format('h')
+    var currentDate = moment().format('MM-DD-YYYY'); 
+    var currentHour = moment()._d.getHours();
     var currentHourInt = parseInt(currentHour);
-    var amPM = moment().format('a')
-    var amPMstring = amPM.toString();
 
     
     $("#currentDate").text(currentDate);
@@ -30,16 +28,15 @@ $(document).ready(function(){
 
     function makeCalendar() {
 
-    // For loop to create an entry for every hour object in the hoursOfDay array
+    // For loop to create an entry for every hour object in the hoursOfDay array, we also declare the time variables
+    // that will be used to determine how each time block is color-coated
 
     for (var i = 0; i < hoursOfDay.length; i ++) {
 
         var hourDisplay = hoursOfDay[i].hour
+        var whatHour = hoursOfDay[i].mil;
         var agendaDisplay = hoursOfDay[i].agenda
-        var whatHour = hourDisplay.slice(0,-5)
         var whatHourInt = parseInt(whatHour);
-        var displayAmPm = hourDisplay.slice(-2)
-        var displayAmPmString = displayAmPm.toString();
         // Button and input name attributes to determine what button ties to what input field
         var nameElBtn = "button-name" + i
         var nameElIn = "input-name" + i
@@ -53,6 +50,9 @@ $(document).ready(function(){
         var momentHourCurrent = moment(momentHours, 'h')
         // conditionals for whether the current time is after a given hour on the schedule
         var checkTime = moment().isAfter(momentHours)
+
+        
+        console.log(hoursOfDay)
     
         // Add an input field and fill the text content with the corresponding field from localStorage
         // We also assign a "name" attribute based on the variable for determining this
@@ -65,14 +65,16 @@ $(document).ready(function(){
         $(newLI).prepend(newSpan)
         $(newLI).append(newInput);
 
-        // If the current time is after a given hour
+        // If the current hour matches the hour of a given time block
+        // We turn the background light blue
 
-        if (currentHourInt == whatHourInt && amPMstring == displayAmPmString){
+        if (currentHourInt == whatHourInt){
             $(newInput).removeClass("future");
             $(newInput).removeClass("past");
             $(newInput).addClass("present");
         }
-        else if (checkTime) {
+        else if (currentHourInt > whatHourInt) {
+            // If that hour has passed,
             // We turn the input field background red
             $(newInput).removeClass("future");
             $(newInput).addClass("past");
@@ -118,10 +120,6 @@ $(document).ready(function(){
         
         }
 
-        
-        
-
-        
     })
 
     }
