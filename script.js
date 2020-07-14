@@ -51,8 +51,6 @@ $(document).ready(function(){
         // conditionals for whether the current time is after a given hour on the schedule
         var checkTime = moment().isAfter(momentHours)
 
-        
-        console.log(hoursOfDay)
     
         // Add an input field and fill the text content with the corresponding field from localStorage
         // We also assign a "name" attribute based on the variable for determining this
